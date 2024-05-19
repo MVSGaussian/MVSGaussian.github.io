@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo.">
+  <meta name="keywords" content="Generalizable Gaussian Splatting, Multi-View Stereo, Neural Radiance Field, Novel View Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVSGaussian: Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo</title>
+ 
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MVSGaussian: Fast Generalizable Gaussian Splatting <br> Reconstruction from Multi-View Stereo</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://tqtqliu.github.io/">Tianqi Liu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://wanggcong.github.io/">Guangcong Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://skhu101.github.io/">Shoukang Hu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://leoshen917.github.io/">Liao Shen</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://so2.cljtscd.com/citations?user=g_Y0w7MAAAAJ&hl=zh-CN">Xinyi Ye</a><sup>1</sup>,
+            </span>
+            <span class="author-block">                
+              <a href="http://yuhangzang.github.io/">Yuhang Zang</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://so2.cljtscd.com/citations?user=396o2BAAAAAJ&hl=zh-CN">Zhiguo Cao</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://weivision.github.io/">Wei Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology &nbsp;&nbsp;</span>
+            <span class="author-block"><sup>2</sup>Nanyang Technological University &nbsp;&nbsp;</span>
+          </div>
+          <!-- <h1 style="font-size:24px;font-weight:bold">Arxiv 2024</h1> -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+             
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+               <!-- Video Link. -->
+               <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-justified">
+          <p>
+            <strong>TL;DR:</strong> 
+            MVSGaussian is a Gaussian-based method designed for efficient reconstruction of unseen scenes from sparse views in a single forward pass. 
+            It offers high-quality initialization for fast training and real-time rendering.
+          </p>
+        </div>
+        <!-- Abstract. -->
+        <h2 class="title is-2">Abstract</h2>
+        <img class="img-fluid" src="static\images\fig1.png">
+        <div class="content has-text-justified">
+          <p>
+            We present MVSGaussian, a new generalizable 3D Gaussian representation approach derived from Multi-View Stereo (MVS) that can efficiently reconstruct unseen scenes.
+            Specifically, 1) we leverage MVS to encode geometry-aware Gaussian representations and decode them into Gaussian parameters. 
+            2) To further enhance performance, we propose a hybrid Gaussian rendering that integrates an efficient volume rendering design for novel view synthesis. 
+            3) To support fast fine-tuning for specific scenes, we introduce a multi-view geometric consistent aggregation strategy to effectively aggregate the point clouds generated by the generalizable model, serving as the initialization for per-scene optimization. 
+            Compared with previous generalizable NeRF-based methods, which typically require minutes of fine-tuning and seconds of rendering per image, MVSGaussian achieves real-time rendering with better synthesis quality for each scene. 
+            Compared with the vanilla 3D-GS, MVSGaussian achieves better view synthesis with less training computational cost. 
+            Extensive experiments on DTU, Real Forward-facing, NeRF Synthetic, and Tanks and Temples datasets validate that MVSGaussian attains state-of-the-art performance with convincing generalizability, real-time rendering speed, and fast per-scene optimization. 
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Abstract. -->
+</div> 
+
+<section class="section">
+  <div class="container">
+  <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Method</h2>
+        <img class="img-fluid" src="static\images\pipeline.png">
+        <div class="content has-text-justified">
+          <p>
+          <b> The overview of generalizable Gaussian Splatting framework. </b> 
+          MVSGaussian consists of three components: 1) <em> Depth Estimation from Multi-View Stereo. </em> The extracted multi-view features are aggregated into a cost volume, regularized by 3D CNNs to produce depth estimations. 
+          2) <em> Pixel-aligned Gaussian representation. </em> Based on the obtained depth map, we encode features for each pixel-aligned 3D point.
+          3) <em> Efficient hybrid Gaussian rendering. </em> We add a simple yet effective depth-aware volume rendering module to boost the generalizable performance.
+        </div>
+        <img class="img-fluid" src="static\images\fusion.png">
+        <div class="content has-text-justified">
+          <p>
+          <b> Consistent aggregation. </b> 
+          With depth maps and point clouds produced by the generalizable model, we conduct multi-view geometric consistency checks to derive masks for filtering out unreliable points.
+          The filtered point clouds are concatenated to construct a point cloud, serving as the initialization for per-scene optimization.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Method. -->
+</div> 
+
+
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <h2 align="center"  class="title is-2">Generalization results</h2>
+        <h4 align="center" class="title is-4">Qualitative comparison </h4>
+        <img class="img-fluid" src="static\images\gen.png">
+        <h4 align="center" class="title is-4">Video comparsion </h4>
+        <div class="content has-text-justified">
+        <em> Compared with generalizable NeRFs, like the state-of-the-art ENeRF, our method can achieve better performance at slightly faster speeds and with less memory overhead. </em>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 loop
+                 width="100%">
+            <source src="static\videos\gen.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <h4 align="center" class="title is-4">Depths </h4>
+        <div class="content has-text-justified">
+        <em> Since cost volume-based MVS explicitly models the geometry of scenes, we can obtain reasonable depth maps. </em>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                autoplay
+                controls
+                muted
+                loop
+                width="100%">
+            <source src="static\videos\depths.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <h2 align="center"  class="title is-2">Finetuned results</h2>
+        <h4 align="center" class="title is-4">Qualitative comparison </h4>
+        <img class="img-fluid" src="static\images\ft.png">
+        <!-- Ours vs. ENeRF -->
+        <h4 align="center" class="title is-4">Ours vs. ENeRF </h4>
+        <div class="content has-text-justified">
+        <em> Compared with the generalizable NeRFs, like ENeRF, our method can achieve better performance at higher rendering speeds in a shorter optimization time. </em>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 loop
+                 width="100%">
+            <source src="static\videos\ft_nerf.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- Ours vs. ENeRF -->
+
+        <!-- Ours vs. 3D-GS -->
+        <h4 align="center" style="margin-top:80px;"  class="title is-4">Ours vs. 3D-GS </h4>
+        <div class="content has-text-justified">
+        <em> Compared with 3D-GS, our method can achieve better performance at comparable rendering speeds in a shorter optimization time. </em
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                 autoplay
+                 controls
+                 muted
+                 loop
+                 width="100%">
+            <source src="static\videos\ft_llff.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- Ours Finetuned vs. 3D-GS -->
+        
+      </div>
+    </div>
+    <!--/ Animation. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @article{liu2024mvsgaussian,
+          title={Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo},
+          author={Liu, Tianqi and Wang, Guangcong and Hu, Shoukang and Shen, Liao and Ye, Xinyi and Zang, Yuhang and Cao, Zhiguo and Li, Wei and Liu, Ziwei},
+          journal={arXiv preprint arXiv:},
+          year={2024}
+      }
+</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div align="center" class="container">
+    <div class="columns is-centered">
+        <div class="content">
+            This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+        </div>
+      </div>
+    </div>
+</footer>
+
+<!-- <div class="section" style="width:200px; margin-left: 40%;">  -->
+  <div class="section" style="text-align:center; padding:0 0 20px 0">
+    <a href="https://clustrmaps.com/site/1bzpe"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=kASR5JsT-bmiIbnZko8aWI6Rf-_B1nSdI7Q7N5nFK5s&cl=ffffff" /></a>
+</div>
+
+</body>
+</html>
