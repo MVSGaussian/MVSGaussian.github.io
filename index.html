@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MVSGaussian: Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo</title>
  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -18,108 +20,130 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+  <link rel="shortcut icon" href="./static/images/faviconV3.png" type="image/png">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/own.min.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Shantell+Sans" rel="stylesheet">
 
+  <link rel="stylesheet" href="./static/css/style.css">
+  <link rel="stylesheet" href="./static/css/twentytwenty.css">
+  <link rel="stylesheet" href="./static/css/twentytwenty_aios.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static/js/jquery.event.move.js"></script>
+  <script src="./static/js/jquery.twentytwenty.js"></script>
+  <script src="./static/js/jquery.twentytwenty_aios.js"></script>
+  <script>
+    $(function () {
+      $(".twentytwenty-container").twentytwenty();
+      // $(".twentytwenty-container", "#results-carousel").twentytwenty({default_offset_pct: 0.5, ratio: 0.5});
+    });
+  </script>
+  <script>$(function () { $(".twentytwenty_aios-container").twentytwenty_aios() });</script>
 </head>
 <body>
 
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><font color=DeepSkyBlue>MVSGaussian:</font> Fast Generalizable Gaussian Splatting <br> Reconstruction from Multi-View Stereo</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://tqtqliu.github.io/">Tianqi Liu</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://wanggcong.github.io/">Guangcong Wang</a><sup>2,3</sup>,</span>
-            <span class="author-block">
-              <a href="https://skhu101.github.io/">Shoukang Hu</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://leoshen917.github.io/">Liao Shen</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=g_Y0w7MAAAAJ&hl">Xinyi Ye</a><sup>1</sup>,
-            </span>
-            <span class="author-block">                
-              <a href="http://yuhangzang.github.io/">Yuhang Zang</a><sup>4</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://english.aia.hust.edu.cn/info/1085/1528.htm">Zhiguo Cao</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://weivision.github.io/">Wei Li</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2</sup>
-            </span>
-          </div>
+  <section class="hero">
+    <div class="hero-body-background">
+      <div class="hero-body-background-div"></div>
+      <div style="text-align: center; z-index: 1; margin-top: 60px">
+        <p class="word1 shakefont " style="margin-right: -10px; color: #fa3a3a;font-family:PressStart2P">M</p>
+        <p class="word2 shakefont " style="margin-right: -2px; color: #da8d22;font-family:PressStart2P">V</p>
+        <p class="word3 shakefont " style="margin-right: -2px; color: #fc7506;font-family:PressStart2P">S</p>
+        <p class="word4 shakefont " style="margin-right: -10px; color: #e12d2d;font-family:PressStart2P">G</p>
+        <p class="word5 shakefont " style="margin-right: -10px; color: #5e4dde;font-family:PressStart2P">a</p>
+        <p class="word6 shakefont " style="margin-right: -10px; color: #35a8b7;font-family:PressStart2P">u</p>
+        <p class="word7 shakefont " style="margin-right: -10px; color: #c0c23e;font-family:PressStart2P">s</p>
+        <p class="word8 shakefont " style="margin-right: -10px; color: #23c29a;font-family:PressStart2P">s</p>
+        <p class="word9 shakefont " style="margin-right: -10px; color: #3a68e9;font-family:PressStart2P">i</p>
+        <p class="word10 shakefont " style="margin-right: -10px; color: #b0b31a;font-family:PressStart2P">a</p>
+        <p class="word11 shakefont " style="margin-right: -10px; color: #b31a8a;font-family:PressStart2P">n</p>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology &nbsp;&nbsp;</span>
-            <span class="author-block"><sup>2</sup>Nanyang Technological University &nbsp;&nbsp;</span>
-            <br />
-            <span class="author-block"><sup>3</sup>Great Bay University &nbsp;&nbsp;</span>
-            <span class="author-block"><sup>4</sup>Shanghai AI Laboratory &nbsp;&nbsp;</span>
+        <p class="acmefont high-font" style="color: #0000ff;">
+          Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo
+        </p>
+        <p class="author-block sansfont shadowtext" style="color: #FFFFFF; font-size: 1.8em;">
+                  ECCV 2024
+              </p>
+      </div>
+      <div class="columns is-centered" style="z-index: 1; margin-top: -80px">
+        <div class="column has-text-centered ">
+          <div class="publication-authors  authors-font"
+            style="color: #000000;font-weight: bold;font-family:DMSerifText;">
+            <span class="author-block sansfont"><a href="http://tqtqliu.github.io">Tianqi Liu</a><sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://wanggcong.github.io">Guangcong Wang</a><sup>2,3</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://skhu101.github.io">Shoukang Hu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://leoshen917.github.io/">Liao Shen</a><sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://scholar.google.com/citations?user=g_Y0w7MAAAAJ&hl">Xinyi Ye</a><sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://yuhangzang.github.io">Yuhang Zang</a><sup>4</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="http://faculty.hust.edu.cn/caozhiguo1/en/index.htm">Zhiguo Cao</a><sup>1</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://weivision.github.io">Wei Li</a><sup>2</sup>&nbsp;&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;</span>
           </div>
-          <h1 style="font-size:24px;font-weight:bold">ECCV 2024</h1>
-          <div class="column has-text-centered">
+  
+          <div class="publication-authors  authors2-font"
+            style="color: #606060;font-weight: bold;font-family:DMSerifText; margin-bottom: 4pt;">
+            <span class="author-block sansfont"><sup>1</sup>Huazhong University of Science and Technology </span>
+            <span class="author-block sansfont">&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><sup>2</sup>Nanyang Technological University</span>
+            <span class="author-block sansfont">&nbsp;&nbsp;</span>
+            <br />
+            <span class="author-block sansfont"><sup>3</sup>Great Bay University</span>
+            <span class="author-block sansfont">&nbsp;&nbsp;</span>
+            <span class="author-block sansfont"><sup>4</sup>Shanghai AI Laborator</span>
+          </div>
+  
+          <div class="column has-text-centered" style="font-family:DMSerifText; font-weight: bold">
             <div class="publication-links">
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2405.12218"
-                   class="external-link button is-normal is-rounded is-dark">
+                  class="external-link button is-normal is-rounded light-btn btn-font">
                   <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                    <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper</span>
+                  <span class="sansfont">Paper</span>
                 </a>
               </span>
-             
-              <!-- Code Link. -->
+  
               <span class="link-block">
-                <a href="https://github.com/TQTQliu/MVSGaussian"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="https://youtu.be/4TxMQ9RnHMA" class="external-link button is-normal is-rounded light-btn btn-font">
                   <span class="icon">
-                      <i class="fab fa-github"></i>
+                    <i class="fab fa-youtube"></i>
                   </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-
-               <!-- Video Link. -->
-               <span class="link-block">
-                <a href="https://youtu.be/4TxMQ9RnHMA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
+                  <span class="sansfont">YouTube</span>
                 </a>
-              </span> 
+              </span>
+  
+              <span class="link-block">
+                <a href="https://github.com/TQTQliu/MVSGaussian" class="external-link button is-normal is-rounded light-btn btn-font">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span class="sansfont">Code</span>
+                </a>
+              </span>
+  
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
 <section class="section">
   <div class="container">
@@ -141,7 +165,8 @@
         </div>
         <br />
         <!-- Abstract. -->
-        <h2 class="title is-2">Abstract</h2>
+        <!-- <h2 class="title is-2">Abstract</h2> -->
+        <h2 class="title is-3 sansfont mode-font" style="font-family:'Acme';color:#000000;">Abstract</h2>
         <img class="img-fluid" src="static\images\fig1.png">
         <div class="content has-text-justified">
           <p>
