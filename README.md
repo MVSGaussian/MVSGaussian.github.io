@@ -11,4 +11,3 @@ If you find MVSGaussian useful for your work please cite:
     year={2024}
 }
 ```
-This website is borrowed from the [Nerfies website](https://nerfies.github.io) 
