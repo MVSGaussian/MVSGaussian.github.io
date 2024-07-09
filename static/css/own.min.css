@@ -1,5 +1,5 @@
 .hero-body-background {
-    height: 600px;
+    height: 800px;
     align-items: center;
     display: grid;
     position: relative;
@@ -33,7 +33,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: #ffffffaa;
+    background: #0000004a;
 }
 
 .hero-body-gradient-black {
