@@ -144,11 +144,12 @@
     </div>
 </section>
 
+
   <section class="section">
-    <div class="container">
+    <div class="container is-max-desktop content">
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
-        <div class="column is-two-thirds">
+        <div class="column">
           <h2 class="title is-3 sansfont mode-font" style="font-family:'Acme';color:#595959">TL;DR</h2>
           <div class="note-font" style="margin-top: -10pt; font-style: italic;">
             MVSGaussian is a Gaussian-based method designed for efficient reconstruction of unseen scenes from sparse views in a single forward pass. 
@@ -173,20 +174,19 @@
               Compared with previous generalizable NeRF-based methods, which typically require minutes of fine-tuning and seconds of rendering per image, MVSGaussian achieves real-time rendering with better synthesis quality for each scene. 
               Compared with the vanilla 3D-GS, MVSGaussian achieves better view synthesis with less training computational cost. 
               Extensive experiments on DTU, Real Forward-facing, NeRF Synthetic, and Tanks and Temples datasets validate that MVSGaussian attains state-of-the-art performance with convincing generalizability, real-time rendering speed, and fast per-scene optimization. 
-  
-          </div>
         </div>
       </div>
     </div>
+  </div>
     <!--/ Abstract. -->
   </div> 
 
 
 <section class="section">
-  <div class="container">
+  <div class="container is-max-desktop content">
   <!-- Method. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-two-thirds">
+      <div class="column">
         <h2 class="title is-3 sansfont mode-font" style="font-family:'Acme';color:#595959">Method</h2>
         <img class="img-fluid" src="static\images\pipeline.png">
         <div class="content has-text-justified">
@@ -203,17 +203,17 @@
           With depth maps and point clouds produced by the generalizable model, we conduct multi-view geometric consistency checks to derive masks for filtering out unreliable points.
           The filtered point clouds are concatenated to construct a point cloud, serving as the initialization for per-scene optimization.
         </div>
-      </div>
     </div>
+  </div>
   </div>
   <!--/ Method. -->
 </div> 
 
 
 <section class="section">
-  <div class="container">
+  <div class="container is-max-desktop content">
     <div class="columns is-centered">
-      <div class="column is-two-thirds">
+      <div class="column">
         <h2 align="center" class="title is-3 sansfont mode-font" style="font-family:'Acme';color:#595959">Generalization results</h2>
         <h4 align="center" class="title is-4 sansfont mode-font" style="font-family:'Acme';color:#b5b4b4;">Qualitative comparison</h4>
         <img class="img-fluid" src="static\images\gen.png">
@@ -247,7 +247,7 @@
                     type="video/mp4">
           </video>
         </div>
-        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -255,9 +255,9 @@
     
 
 <section class="section">
-  <div class="container">
+  <div class="container is-max-desktop content">
     <div class="columns is-centered">
-      <div class="column is-two-thirds">
+      <div class="column">
         <h2 align="center" class="title is-3 sansfont mode-font" style="font-family:'Acme';color:#595959;">Finetuned results</h2>
         <h4 align="center" class="title is-4 sansfont mode-font" style="font-family:'Acme';color:#b5b4b4;">Qualitative comparison</h4>
         <img class="img-fluid" src="static\images\ft.png">
@@ -314,7 +314,6 @@
           </video>
         </div>
         <!-- process -->
-        
       </div>
     </div>
     <!--/ Animation. -->
